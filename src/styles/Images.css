@@ -1,0 +1,40 @@
+.image-container{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+   justify-content: center;
+    flex-wrap: wrap;
+    
+    
+}
+.image-container-inner{
+    position: relative;
+}
+.image-view{
+    width: 500px;
+    height: 500px;
+    cursor: pointer;
+    object-fit: contain;
+    border:solid 2px black;
+    border-radius: 20px;
+}
+.delete-icon{
+position: absolute;
+top:10px;
+right: 10px;
+cursor: pointer;
+font-size: 26px;
+}
+.edit-icon{
+position: absolute;
+top:40px;
+right: 10px;
+cursor: pointer;
+font-size: 20px;
+}
+.delete-icon:hover{
+    color: red;
+}
+.edit-icon:hover{
+    color: rgb(50, 76, 193);
+}

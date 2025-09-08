@@ -1,0 +1,56 @@
+.edit-image-main {
+  display: flex;
+  gap: 20px;
+  height: 100vh;
+}
+
+.edit-image-container {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.annotations-sidebar {
+  width: 180px;
+  border-left: 1px solid #ddd;
+  padding: 10px;
+}
+
+.annotations-sidebar-div {
+  text-align: center;
+  cursor: pointer;
+}
+
+.download-box {
+  font-size: 24px;
+  cursor: pointer;
+  color: #0066cc;
+}
+
+.overlay-tools {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  
+  
+  
+  border-radius: 6px;
+}
+
+.overlay-tools input {
+  
+  border-radius: 4px;
+
+  background-color: transparent;
+  font-size: 13px;
+
+}
+
+.delete-annotation {
+  font-size: 20px;
+  cursor: pointer;
+  color: #ff3333;
+}
