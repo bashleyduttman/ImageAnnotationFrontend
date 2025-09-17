@@ -2,10 +2,42 @@
     display: flex;
     flex-direction: row;
     gap:20px;
+   align-items: center;
    justify-content: center;
     flex-wrap: wrap;
+
     
     
+}
+.image-size-outerdiv{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.image-size-div{
+    border:black solid 2px;
+    background-color: rgb(12, 12, 12);
+    width: 100%;
+    color:white;
+    padding: 10px;
+   justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.image-size-div div{
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    
+}
+.image-size-div :first-child{
+    border-bottom: white 2px solid;
+     
+    align-items: center;
+
 }
 .image-container-inner{
     position: relative;

@@ -3,15 +3,14 @@ import Header from "./Header"
 import Images from "./Images";
 import "../styles/Home.css"
 import { useState,useEffect } from "react";
-function Home(){
+function Home({imageUrls,setImageUrls}){
 
-const [imageUrls,setImageUrls]=useState([]);
  useEffect(()=>{ 
         fetch_images();
-    },[])
+},[])
     const fetch_images=async()=>{
         try{
-            const result=await fetch("http://localhost:3001/api/images/",{
+            const result=await fetch('http://localhost:3002/server/image_annotations_function/images',{
             method:"GET",
             headers:{
                 "Content-Type":"application/json"
@@ -20,9 +19,10 @@ const [imageUrls,setImageUrls]=useState([]);
             if(result.ok){
 
                 const data = await result.json(); 
-                // console.log(data); 
+                
                    
-                const urls = data.URL.map((item) => item);
+                const urls = data.data.map((item) => ({url: item.data,id:item.id,size:item.size}));
+
                 setImageUrls(urls)
                
             }

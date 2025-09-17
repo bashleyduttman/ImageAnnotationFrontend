@@ -2,12 +2,39 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background-color: rgb(255, 255, 255);
-     border:2px dashed rgb(0, 0, 0);
+    min-height: 200px;
+    color:rgb(0, 0, 0);
+    border: black dashed 2px;
+    backdrop-filter: blur(60px); 
+  background: rgb(255, 255, 255); 
      align-items: center;
+}
+.file-choose-icon{
+    font-size:39px;
+    color:rgb(0, 0, 0);
+    top:-2px;
+    position: absolute;
+    left: -39px;
+    cursor: pointer;
+
+}
+.file-choose-container{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    padding:0px 3px 0px 3px;
+    font-size: 30px;
+    cursor: pointer;
+    color:rgb(0, 0, 0);
+    border-radius: 5px;
+
+    flex-direction: row;
+    gap:10px;
+    position: relative;
+    align-items: center;
 }
 .image-uploader-container{
    
+   align-items: center;
     padding: 20px;
     display: flex;
    gap:10px;
@@ -32,16 +59,21 @@
 .image-uploader-btn{
     width: 50px;
     height: 30px;
-    color:rgb(11, 11, 11);
+    color:rgb(0, 0, 0);
     cursor: pointer;
 }
 .image-uploader-btn:hover{
     color:rgb(206, 193, 176);
 }
 .choose-btn{
-    background-color: rgb(0, 0, 0);
-    padding:0px 3px 0px 3px;
     cursor: pointer;
+}
+.file-choose-container:hover{
+    background-color:rgb(21, 21, 22);
     color:white;
-    border-radius: 5px;
+    transition:  all 0.5s;
+}
+.file-choose-container:hover .file-choose-icon{
+    color:rgb(5, 5, 5);
+    transition: all 0.5s;
 }

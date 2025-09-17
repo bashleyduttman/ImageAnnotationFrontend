@@ -2,31 +2,49 @@
   display: flex;
   gap: 20px;
   height: 100vh;
+  justify-content: center;
+  border: black 2px solid;
 }
 
 .edit-image-container {
   flex: 1;
   position: relative;
   display: flex;
+  
   justify-content: center;
   align-items: center;
 }
-
+.icon-active{
+  color:red;
+}
 .annotations-sidebar {
-  width: 180px;
-  border-left: 1px solid #ddd;
+
   padding: 10px;
+ flex:1;
+  justify-content: center;
+  display: flex;
+  padding-top: 40px;
+  /* box-shadow: -20px -0px 10px rgba(126, 123, 123, 0.8); */
+  background-color: black;
+  color:white;
 }
 
 .annotations-sidebar-div {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap:40px;
   cursor: pointer;
 }
-
+.rectangle-checkBox{
+  display: flex;
+  gap:10px;
+  align-items: center;
+}
 .download-box {
-  font-size: 24px;
+  font-size: 50px;
   cursor: pointer;
-  color: #0066cc;
+  
 }
 
 .overlay-tools {
@@ -48,9 +66,28 @@
   font-size: 13px;
 
 }
-
+.rectangle-icon{
+  display: flex;
+  font-size: 50px;
+}
+.download-section{
+  display: flex;
+  gap:10px;
+  align-items: center;
+}
 .delete-annotation {
-  font-size: 20px;
-  cursor: pointer;
+  font-size: 30px;
+  
   color: #ff3333;
+
+}
+.delete-container{
+  display: flex;
+justify-content: center;
+  gap:20px;
+  cursor: pointer;
+  font-size: 25px;
+  align-items: center;
+
+
 }

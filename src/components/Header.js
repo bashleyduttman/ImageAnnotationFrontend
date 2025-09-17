@@ -5,7 +5,7 @@ function Header(){
             <div className="home-header">
                  <h1>Image Box</h1>
             </div>
-            <div style={{paddingTop:"80px"}}>
+            <div  className="home-header-sub">
                 <p>Upload & Annotate Your Image!</p>
             </div>
         </div>

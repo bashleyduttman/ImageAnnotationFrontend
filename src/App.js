@@ -5,10 +5,11 @@ import Temp from "./components/Temp"
 import { useState } from "react";
 function App(){
   // const [editUrl,setEditUrl]=useState("")
+  const [imageUrls,setImageUrls]=useState([]);
   return(
     <BrowserRouter>
     <Routes>
-    <Route path="/" element={<Home />}/>
+    <Route path="/" element={<Home imageUrls={imageUrls} setImageUrls={setImageUrls} />}/>
     <Route path="/edit" element={<Edit/>}/>
     <Route path="/temp" element={<Temp/>}> </Route>
       

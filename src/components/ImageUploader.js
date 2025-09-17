@@ -1,35 +1,40 @@
 import { useState } from "react"
 import { LuUpload } from "react-icons/lu";
 import imageCompression from "browser-image-compression"
+import Spinner from "../others/Spinner"
+import { FaRegImage } from "react-icons/fa6";
+
 import "../styles/ImageUploader.css"
 function ImageUploader({onUpload}){
     const [preview,setPreview]=useState(null);
     const [fileName,setFileName]=useState("");
     const [isEnableUpload,setIsEnableUpload]=useState(false);
+    const [spinner,setSpinner]=useState(false);
 
     
     const handleChange=async(e)=>{
         const file=e.target.files && e.target.files[0];
         if(!file)return;
         
-        const compressed=await imageCompression(file,{
-            maxSizeMB:1,
-            maxWidthOrHeight:1024,
-            useWebWorker:true
-        })
-        setPreview(URL.createObjectURL(compressed));
-        setFileName(compressed.name)
+       
+        setPreview(URL.createObjectURL(file));
+        setFileName(file.name)
         setIsEnableUpload(true)
     }
     const handleUploads=async()=>{
         try{
+            setSpinner(true);
             const form_data=new FormData();
             form_data.append("image",document.getElementById("file-input").files[0]);
-            const result=await fetch("http://localhost:3001/api/images/",{
+            const result=await fetch('http://localhost:3002/server/image_annotations_function/images/',{
                 method:"POST",
                 body:form_data,
             })
             if(result.ok){
+                setPreview(null);
+                setFileName("");
+                setIsEnableUpload(false);
+                setSpinner(false);
                 console.log("image uploaded successfully");
                 onUpload();
             }
@@ -55,11 +60,15 @@ function ImageUploader({onUpload}){
                     style={{display:"none"}}
                     />
                 </div>
-                <div>
-                     <label htmlFor="file-input" className="choose-btn">
+                
+                <div className="file-choose-container" >
+                     <label htmlFor="file-input"  className="choose-btn">
                         Choose-file
+                        <FaRegImage className="file-choose-icon"/>
                     </label>
+                    
                 </div>
+                
                
                 {fileName &&
                 <div>
@@ -78,7 +87,9 @@ function ImageUploader({onUpload}){
             <div className="image-uploader-footer">
                
                 <div onClick={()=>handleUploads()}>
-                    <LuUpload className="image-uploader-btn"/>
+                    {!spinner &&<LuUpload className="image-uploader-btn"/> }
+                    {spinner && <Spinner/>}
+                    
                 </div>
              
               <div>
